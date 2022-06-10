@@ -1,0 +1,28 @@
+#!/bin/bash
+f()
+{
+touch $HOME/$k;
+tree >> $HOME/$k;
+chmod 756 $HOME/$k;
+}
+echo zadanie 1
+read -p 'Podaj nazwę katalogu: ' k
+if [ $HOME = $HOME/$k ];
+then echo "plik istnieje";
+id >> $HOME/$k/skrypt;
+else f('zawartosc kat.domowego')
+find -type -b > $HOME/$k;
+fi
+
+#!/bin/bash
+echo zadanie 2
+if [ '$#' != 2 ];
+then echo "Błąd";
+exit 84
+fi
+if [ '$2' = whoami ];
+then $PWD/$2;
+fi
+if [ '$1' = "abc" && '$2' = "abc" ];
+then  find $PWD -maxdepth 3 -mtime +5 >> wyszukane > echo "wyniki 6.05.19"'
+fi
