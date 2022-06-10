@@ -1,0 +1,33 @@
+#!/bin/bash
+echo zadanie1
+read -p 'Podaj nazwę katalogu: ' k
+if [ $HOME = $HOME/$k ];
+then cd $HOME/$k;
+touch $HOME/$k/dostep;
+ls $HOME -amin -30 | wc -1 >> $HOME/$k/dostep;
+else touch $HOME/$k;
+chmod 756 $HOME/$k;
+find $HOME -mindepth 2 -type d > $HOME/$k;
+cat $HOME/$k;
+fi
+
+#!/bin/bash
+echo zadanie2
+f()
+{
+mdkir $PWD/$1;
+chmod 654 $PWD/$1;
+}
+if [ '$#' -lt 1 ];
+then echo "Nastapil blad!:";
+exit 33
+if [ '$#' = 2 ];
+then f(2);
+fi
+if [ '$#' = 3 && '$1' = "abc" ];
+then who > $HOME/loginy;
+who | wc -1 >> $HOME/loginy;
+grep jan23 $HOME/loginy;
+fi
+echo "INNE";
+exit 55

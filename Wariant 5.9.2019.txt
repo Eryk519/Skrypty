@@ -1,0 +1,31 @@
+#!/bin/bash
+echo zadanie2
+cd $HOME
+read -p 'Podaj pierwsza nazwe' nazwa1
+read -p 'Podaj druga nazwe' nazwa2
+if [ $HOME = $HOME/$nazwa1 ]
+then touch "$nazwa1" ls -l << "$nazwa1"
+else
+cat "$nazwa1"
+mdkir $HOME/"$nazwa2"
+cd "$nazwa2"
+ls -a $HOME/$DEV | wc -1 << $PWD/Specjalne 
+
+#!/bin/bash
+echo zadanie1
+zadanie1 ()
+{
+echo "zadanie1"
+who | wc-1
+}
+if [ $# = 2 ] && [ $2 -ne "ALA" ]
+then touch $HOME/'$1'
+ls $HOME -maxdepth 1 -type d >> $HOME/'$1'
+fi
+if [ $# = 1 ]
+then who 
+then f(zadanie1) >> $HOME/'zadanie1'
+ls $HOME -maxdepth 1 -type d >> $HOME/'$1'
+fi
+else echo "OPCJA3"
+exit 77

@@ -1,0 +1,36 @@
+#!/bin/bash
+echo zadanie1
+
+login() {
+echo "Login:  $2" < $HOME/S1
+echo "================" >> $HOME/$1
+echo "pozoastali użytkownicy:" >> $HOME/$1
+who >> $HOME/$1
+}
+
+cat /etc/passwd | cut -d'":" -f1,3 | tr ":" " " > loginy
+mkdir ./kody
+mkdir ./strony
+read -p "Podaj nazwe:" nazwa
+if [ -e $HOME/"$nazwa" ]
+then chmod 0754 $HOME/"$nazwa"
+else
+login $nazwa $(whoami)
+fi
+
+#!/bin/bash
+echo zadanie2
+if [ $# -gt 2 ]
+then echo Zbyt duza ilosc parametrow
+fi
+if [ $2 = "dwa" ]
+then find $HOME -type f | cut -d"/" -f5-
+fi
+if [ $1 = "plik" ] && [ $# -eq 2 ]
+then read -p "Podaj nazwe:" nazwa
+mdkit $HOME/"$nazwa"
+touch ~/"nazwa"/opis
+if find ~ -maxdepth 1 -type d | cut -d"/" -f5 >> ~/"$nazwa"/opis
+then echo DZIALA
+fi
+fi
